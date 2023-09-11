@@ -1,4 +1,4 @@
-# folotoy-server-deployment
+# folotoy-server-self-hosting
 
 Config files for self-hosting the FoloToy Server.
 
