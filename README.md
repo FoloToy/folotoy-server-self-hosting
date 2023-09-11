@@ -21,7 +21,7 @@ Change `192.168.41.154` in `docker-compose.yml` to your server IP.
 
 ### Custom Prompt and Voice
 
-**If you use Azure OpenAI, model field must be `$deployment_name`**
+**If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
 ```json
 {"1": {
@@ -44,5 +44,5 @@ Change `192.168.41.154` in `docker-compose.yml` to your server IP.
 * Modify default password `public` to other complex string
 * Go to side bar `Access Control` > ` Authentication`, create a `Built-in Database` Authentication
 * Add clients to Authentication database,they can be found in Clients list
- * folotoy_server
- * your toy client ID 
+    - folotoy_server
+    - your toy client ID 
