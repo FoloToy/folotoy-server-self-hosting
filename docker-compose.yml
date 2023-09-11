@@ -1,0 +1,61 @@
+version: '3'
+services:
+  emqx:
+    image: emqx/emqx:latest
+    restart: always
+    ports:
+      - "1883:1883/tcp"
+      - "18083:18083/tcp"
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - "8082:80/tcp"
+    volumes:
+      - ../audio:/usr/share/nginx/html
+  folotoy:
+    image: lewangdev/folotoy-server:latest
+    restart: always
+    depends_on:
+      emqx:
+          condition: service_started
+      nginx:
+          condition: service_started
+    ports:
+      - "8085:8085/udp"
+    volumes:
+      - ./audio:/audio
+      - ./roles.json:/roles.json
+    environment:
+      LOG_LEVEL: INFO
+
+      ROLES_FILE_PATH: /roles.json
+
+      OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+      #OPENAI_OPENAI_TYPE: azure
+      AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      AZURE_OPENAI_ENDPOINT: https://folotoy2.openai.azure.com/
+      AZURE_OPENAI_VERSION: 2023-07-01-preview
+
+      AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      AZURE_TTS_SERVICE_REGION: eastus
+
+      AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
+      AUDIO_SAVE_PATH: /audio
+
+      # MQTT Broker
+      MQTT_BROKER_HOST: emqx
+      MQTT_BROKER_PORT: 1883
+      MQTT_CLIENT_ID: folotoy_server
+      MQTT_USERNAME: folotoy
+      MQTT_PASSWORD: folotoy
+
+      SPEECH_UDP_SERVER_HOST: 192.168.41.154
+      SPEECH_UDP_SERVER_PORT: 8085
+
+      #Baidu Wenyanyixin API
+      #LLM_TYPE: wenyanyixin
+      #WENYANYIXIN_CLIENT_ID:
+      #WENYANYIXIN_SECRET:
+
