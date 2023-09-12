@@ -40,7 +40,7 @@ Change `192.168.41.154` in `docker-compose.yml` to your server IP.
 
 ## Security Tips
 
-* Visit `http://your_server_ip:108083` and sign in with default username `admin` and password `public`
+* Visit `http://your_server_ip:18083` and sign in with default username `admin` and password `public`
 * Modify default password `public` to other complex string
 * Go to side bar `Access Control` > ` Authentication`, create a `Built-in Database` Authentication
 * Add clients to Authentication database,they can be found in Clients list
