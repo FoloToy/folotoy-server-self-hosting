@@ -19,9 +19,26 @@ Change `192.168.41.154` in `docker-compose.yml` to your server IP.
 
 ## Advanced
 
+### Custon OpenAI API Path
+
+Remove `#` of the line in `docker-compose.yml`
+```
+#OPENAI_API_BASE: https://xxx.com/v1
+```
+
+### Use Azure OpenAI
+
+Remove `#` of the line in `docker-compose.yml`
+```
+#OPENAI_OPENAI_TYPE: azure
+```
+
+
 ### Custom Prompt and Voice
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
+
+[Azure Language List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
 
 ```json
 {"1": {
@@ -37,6 +54,7 @@ Change `192.168.41.154` in `docker-compose.yml` to your server IP.
     "voice_name": "zh-CN-XiaoshuangNeural"
   }}
 ```
+
 
 ## Security Tips
 
