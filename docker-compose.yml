@@ -31,6 +31,7 @@ services:
 
       ROLES_FILE_PATH: /roles.json
 
+      #OPENAI_API_BASE: https://xxx.com/v1
       OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
       #OPENAI_OPENAI_TYPE: azure
