@@ -7,6 +7,7 @@
 ## 部署前准备
 
 - OpenAI key or Azure OpenAI Key
+
 - Azure TTS Key
 
 ## 环境依赖
@@ -27,7 +28,7 @@
 
 ### 运行
 
-`docker compose up -d`
+* `docker compose up -d`
 
 ### 升级
 
@@ -49,7 +50,7 @@
 
 ### 使用自定义的 OpenAI API
 
-在 `docker-compose.yml`中，找到 `#OPENAI_API_BASE`，去掉 `#`，并把 ` https://xxx.com/v1` 改成您的 API 地址
+在 `docker-compose.yml`中，找到 `#OPENAI_API_BASE`，去掉 `#`，并把 `https://xxx.com/v1` 改成您的 API 地址
 
 ```
 OPENAI_API_BASE: https://xxx.com/v1
