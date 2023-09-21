@@ -1,15 +1,18 @@
 # folotoy-server-self-hosting
 
-[English](./README.md) | [中文简体](./README.zh_CN.md)
+[English](./README.md) | [简体中文](./README.zh_CN.md)
 
 * Config files for self-hosting the FoloToy Server.
-* Recomended using  **Linux x86** 
-## Preperation
 
-- `OpenAI key ` or `Azure OpenAI Key`
+* Recommended using  **Linux x86** 
+
+## Preparation
+
+- `OpenAI key` or `Azure OpenAI Key`
 
 - `Azure TTS Key`
-## Enviroment Dependency
+
+## Environment Dependency
 
   - docker
 
@@ -24,18 +27,21 @@
   ```
 
 - Change all `192.168.41.154` into your external server IP in `docker-compose.yml`
+
   ```
   AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
   SPEECH_UDP_SERVER_HOST: 192.168.41.154
   ```
 
 - Change `OPENAI_OPENAI_KEY` or `AZURE_OPENAI_KEY` into your  `OpenAI key` or `Azure OpenAI Key` in `docker-compose.yml`
+
   ```
   OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ```
 
 - Change `AZURE_TTS_KEY` into your `Azure TTS Key` in `docker-compose.yml`
+
   ```
   AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ```
@@ -62,23 +68,25 @@
 
 - Create a `Password-Based database`  from sidebar `Access Control` > ` Authentication`
 
-- Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Passowrd` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
+- Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
 
-- Create a new User from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Passowrd` can be found in the log after your connect your device using the Web Serial Tool: `https://tool.folotoy.com/index` > `Console`)
+- Create a new User from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` can be found in the log after your connect your device using the Web Serial Tool: `https://tool.folotoy.com/index` > `Console`)
 
 ## Advanced
 
-### Using Custon OpenAI API Path
+### Using Custom OpenAI API Path
 
-Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` into your custon OpenAI API path
+Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` into your custom OpenAI API path
 ```
 #OPENAI_API_BASE: https://xxx.com/v1
 ```
 
 ### Using Azure OpenAI
-**If you use Azure OpenAI, `AZURE_OPENAI_KEY` must be privided in `docker-compose.yml`**
+
+**If you use Azure OpenAI, `AZURE_OPENAI_KEY` must be provided in `docker-compose.yml`**
 
 Remove `#` of the line in `docker-compose.yml`
+
 ```
 #OPENAI_OPENAI_TYPE: azure
 AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

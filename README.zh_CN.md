@@ -6,7 +6,7 @@
 
 ## 部署前准备
 
-- `OpenAI key ` 或者 `Azure OpenAI Key`
+- `OpenAI key` 或者 `Azure OpenAI Key`
 
 - `Azure TTS Key`
 
@@ -25,16 +25,21 @@
   ```
 
 - 将 `docker-compose.yml` 中所有的 `192.168.41.154` 改成您服务器的外部 IP 地址。
+
   ```
   AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
   SPEECH_UDP_SERVER_HOST: 192.168.41.154
   ```
+
 - 将 `docker-compose.yml` 中的 `OPENAI_OPENAI_KEY` 或 `AZURE_OPENAI_KEY` 修改成您的 `OpenAI key` 或 `Azure OpenAI Key`
+
   ```
   OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ```
+
 - 将 `docker-compose.yml` 中的  `AZURE_TTS_KEY` 修改成您的 `Azure TTS Key`
+
   ```
   AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ```
@@ -61,9 +66,9 @@
 
 - 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）`，创建一个 `Password-Based` 的 `database（内置数据库）`
 
-- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的batabase` > `User Management（用户管理）`，新建一个用户，`Username` 和 `Passowrd` 分别为 `docker-compose.yml` 中定义的 `MQTT_USERNAME` 和 `MQTT_PASSWORD`，并勾选 `Is Superuser`
+- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，`Username` 和 `Password` 分别为 `docker-compose.yml` 中定义的 `MQTT_USERNAME` 和 `MQTT_PASSWORD`，并勾选 `Is Superuser`
 
-- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的batabase` > `User Management（用户管理）`，新建一个用户，填入您设备的 `Username` 和 `Passowrd`（`https://tool.folotoy.com/index` > `Console`， 连接设备后打印的日志中可以查看）
+- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，填入您设备的 `Username` 和 `Password`（`https://tool.folotoy.com/index` > `Console`， 连接设备后打印的日志中可以查看）
 
 ## 高级
 
@@ -76,6 +81,7 @@ OPENAI_API_BASE: https://xxx.com/v1
 ```
 
 ### 使用 Azure OpenAI
+
 **如果使用 Azure OpenAI，在 `docker-compose.yml` 中一定要填入 `AZURE_OPENAI_KEY`**
 在 `docker-compose.yml`中，找到 `#docker-compose.yml`，去掉 `#`
 
