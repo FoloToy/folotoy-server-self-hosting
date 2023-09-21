@@ -2,13 +2,13 @@
 
 * 用于自托管 FoloToy 服务的 docker 配置文件
 
-* 推荐使用 **Linux** 服务器搭建
+* 推荐使用 **Linux x86** 服务器搭建
 
 ## 部署前准备
 
-- OpenAI key or Azure OpenAI Key
+- `OpenAI key ` 或者 `Azure OpenAI Key`
 
-- Azure TTS Key
+- `Azure TTS Key`
 
 ## 环境依赖
 
@@ -16,25 +16,44 @@
 
 ## 快速开始
 
-- `git clone git@github.com:FoloToy/folotoy-server-self-hosting.git`
+- ```
+  git clone git@github.com:FoloToy/folotoy-server-self-hosting.git
+  ```
 
-- `cd /folotoy-server-self-hosting`
+- ``` 
+  cd /folotoy-server-self-hosting
+  ```
 
 - 将 `docker-compose.yml` 中所有的 `192.168.41.154` 改成您服务器的外部 IP 地址。
-
-- 将 `OPENAI_OPENAI_KEY` 或 `AZURE_OPENAI_KEY` 修改成您的 `OpenAI key` 或 `Azure OpenAI Key`
-
-- 将 `AZURE_TTS_KEY` 修改成您的 `Azure TTS Key`
+  ```
+  AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
+  SPEECH_UDP_SERVER_HOST: 192.168.41.154
+  ```
+- 将 `docker-compose.yml` 中的 `OPENAI_OPENAI_KEY` 或 `AZURE_OPENAI_KEY` 修改成您的 `OpenAI key` 或 `Azure OpenAI Key`
+  ```
+  OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
+- 将 `docker-compose.yml` 中的  `AZURE_TTS_KEY` 修改成您的 `Azure TTS Key`
+  ```
+  AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
 
 ### 运行
 
-* `docker compose up -d`
+* ```
+  docker compose up -d
+  ```
 
 ### 升级
 
-* `docker compose pull`
+* ```
+  docker compose pull
+  ```
 
-* `docker compose up -d`
+* ```
+  docker compose up -d
+  ```
 
 ### 认证
 
@@ -57,14 +76,15 @@ OPENAI_API_BASE: https://xxx.com/v1
 ```
 
 ### 使用 Azure OpenAI
-
+**如果使用 Azure OpenAI，在 `docker-compose.yml` 中一定要填入 `AZURE_OPENAI_KEY`**
 在 `docker-compose.yml`中，找到 `#docker-compose.yml`，去掉 `#`
 
 ```
 OPENAI_OPENAI_TYPE: azure
+AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-### 自定义 Prompt 和 Voice
+### 使用自定义 Prompt 和 Voice
 
 **如果使用 Azure OpenAI，模型字段必须是您在部署模型时设置的部署名称**
 

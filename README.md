@@ -2,41 +2,89 @@
 
 [English](./README.md) | [中文简体](./README.zh_CN.md)
 
-Config files for self-hosting the FoloToy Server.
+* Config files for self-hosting the FoloToy Server.
+* Recomended using  **Linux x86** 
+## Preperation
+
+- `OpenAI key ` or `Azure OpenAI Key`
+
+- `Azure TTS Key`
+## Enviroment Dependency
+
+  - docker
 
 ## Quick Start
 
-### Configuration
+- ```
+  git clone git@github.com:FoloToy/folotoy-server-self-hosting.git
+  ```
 
-Change `192.168.41.154` in `docker-compose.yml` to your server IP.
+- ``` 
+  cd /folotoy-server-self-hosting
+  ```
+
+- Change all `192.168.41.154` into your external server IP in `docker-compose.yml`
+  ```
+  AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
+  SPEECH_UDP_SERVER_HOST: 192.168.41.154
+  ```
+
+- Change `OPENAI_OPENAI_KEY` or `AZURE_OPENAI_KEY` into your  `OpenAI key` or `Azure OpenAI Key` in `docker-compose.yml`
+  ```
+  OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
+
+- Change `AZURE_TTS_KEY` into your `Azure TTS Key` in `docker-compose.yml`
+  ```
+  AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
 
 ### Run
 
-`docker compose up -d`
+* ```
+  docker compose up -d
+  ```
 
 ### Update
 
-* `docker compose pull`
-* `docker compose up -d`
+* ```
+  docker compose pull
+  ```
+
+* ```
+  docker compose up -d
+  ```
+
+### Authentication
+
+- Open `http://your_external_server_ip:18083` in your browser(Default username： `admin`, Default password `public`. Please change your password after login)
+
+- Create a `Password-Based database`  from sidebar `Access Control` > ` Authentication`
+
+- Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Passowrd` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
+
+- Create a new User from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Passowrd` can be found in the log after your connect your device using the Web Serial Tool: `https://tool.folotoy.com/index` > `Console`)
 
 ## Advanced
 
-### Custon OpenAI API Path
+### Using Custon OpenAI API Path
 
-Remove `#` of the line in `docker-compose.yml`
+Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` into your custon OpenAI API path
 ```
 #OPENAI_API_BASE: https://xxx.com/v1
 ```
 
-### Use Azure OpenAI
+### Using Azure OpenAI
+**If you use Azure OpenAI, `AZURE_OPENAI_KEY` must be privided in `docker-compose.yml`**
 
 Remove `#` of the line in `docker-compose.yml`
 ```
 #OPENAI_OPENAI_TYPE: azure
+AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-
-### Custom Prompt and Voice
+### Using Custom Prompt and Voice
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
@@ -56,13 +104,3 @@ Remove `#` of the line in `docker-compose.yml`
     "voice_name": "zh-CN-XiaoshuangNeural"
   }}
 ```
-
-
-## Security Tips
-
-* Visit `http://your_server_ip:18083` and sign in with default username `admin` and password `public`
-* Modify default password `public` to other complex string
-* Go to side bar `Access Control` > ` Authentication`, create a `Built-in Database` Authentication
-* Add clients to Authentication database,they can be found in Clients list
-    - folotoy_server
-    - your toy client ID 
