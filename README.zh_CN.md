@@ -60,16 +60,6 @@
   docker compose up -d
   ```
 
-### 认证
-
-- 使用浏览器打开 `http://your_server_ip:18083`（默认用户名： `admin`，密码： `public`。建议初次登录后修改密码）
-
-- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）`，创建一个 `Password-Based` 的 `database（内置数据库）`
-
-- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，`Username` 和 `Password` 分别为 `docker-compose.yml` 中定义的 `MQTT_USERNAME` 和 `MQTT_PASSWORD`，并勾选 `Is Superuser`
-
-- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，填入您设备的 `Username` 和 `Password`（`https://tool.folotoy.com/index` > `Console`， 连接设备后打印的日志中可以查看）
-
 ## 高级
 
 ### 使用自定义的 OpenAI API
@@ -109,3 +99,12 @@ AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     "presence_penalty": 0,
     "voice_name": "zh-CN-XiaoshuangNeural"
   }}
+
+### 认证
+
+**emqx 默认配置允许任何匿名客户端访问，可以通过以下步骤使得你的 emqx 服务只能允许自己的玩具连接。**
+
+- 使用浏览器打开 `http://your_server_ip:18083`（默认用户名： `admin`，密码： `public`。建议初次登录后修改密码）
+- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）`，创建一个 `Password-Based` 的 `database（内置数据库）`
+- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，`Username` 和 `Password` 分别为 `docker-compose.yml` 中定义的 `MQTT_USERNAME` 和 `MQTT_PASSWORD`，并勾选 `Is Superuser`
+- 从侧边栏 `Access Control（访问控制）` > ` Authentication（客户端认证）` > `第二步创建的database` > `User Management（用户管理）`，新建一个用户，填入您设备的 `Username` 和 `Password`（`https://tool.folotoy.com/index` > `Console`， 连接设备后打印的日志中可以查看）
