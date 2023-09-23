@@ -99,8 +99,9 @@ AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     "presence_penalty": 0,
     "voice_name": "zh-CN-XiaoshuangNeural"
   }}
+```
 
-### 认证
+### 认证安全
 
 **emqx 默认配置允许任何匿名客户端访问，可以通过以下步骤使得你的 emqx 服务只能允许自己的玩具连接。**
 
