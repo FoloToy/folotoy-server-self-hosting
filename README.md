@@ -62,16 +62,6 @@
   docker compose up -d
   ```
 
-### Authentication
-
-- Open `http://your_external_server_ip:18083` in your browser(Default username： `admin`, Default password `public`. Please change your password after login)
-
-- Create a `Password-Based database`  from sidebar `Access Control` > ` Authentication`
-
-- Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
-
-- Create a new User from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` can be found in the log after your connect your device using the Web Serial Tool: `https://tool.folotoy.com/index` > `Console`)
-
 ## Advanced
 
 ### Using Custom OpenAI API Path
@@ -112,3 +102,12 @@ AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     "voice_name": "zh-CN-XiaoshuangNeural"
   }}
 ```
+
+### MQTT Authentication
+
+**The default configuration of EMQX allows any anonymous client to access. You can make your EMQX service only allow connections from your own devices by following these steps.**
+
+- Open `http://your_external_server_ip:18083` in your browser(Default username： `admin`, Default password `public`. Please change your password after login)
+- Create a `Password-Based database`  from sidebar `Access Control` > ` Authentication`
+- Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
+- Create a new User from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` can be found in the log after your connect your device using the Web Serial Tool: `https://tool.folotoy.com/index` > `Console`)
