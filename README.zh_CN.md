@@ -2,7 +2,7 @@
 
 * 用于自托管 FoloToy 服务的 docker 配置文件
 
-* 推荐使用 **Linux x86** 服务器搭建
+* 推荐使用 **Linux x86_64, Debian 10-11/Ubuntu 22.04** 服务器搭建
 
 ## 部署前准备
 
