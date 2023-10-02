@@ -4,7 +4,7 @@
 
 * Config files for self-hosting the FoloToy Server.
 
-* Recommended using  **Linux x86** 
+* Recommended using  **Linux x86_64**, Debian 10-11/Ubuntu 22.04
 
 ## Preparation
 
