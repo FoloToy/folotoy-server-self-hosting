@@ -23,7 +23,7 @@
   ```
 
 - ``` 
-  cd /folotoy-server-self-hosting
+  cd folotoy-server-self-hosting
   ```
 
 - Change all `192.168.41.154` into your external server IP in `docker-compose.yml`
