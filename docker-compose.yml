@@ -37,7 +37,7 @@ services:
       #OPENAI_OPENAI_TYPE: azure
       AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       AZURE_OPENAI_ENDPOINT: https://folotoy2.openai.azure.com/
-      AZURE_OPENAI_VERSION: 2023-07-01-preview
+      AZURE_OPENAI_VERSION: "2023-05-15"
 
       AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       AZURE_TTS_SERVICE_REGION: eastus
