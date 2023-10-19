@@ -6,9 +6,9 @@
 
 ## 部署前准备
 
-- `OpenAI key` 或者 `Azure OpenAI Key`
-
-- `Azure TTS Key`
+- **必选** `OpenAI key` 并支持访问 `whisper-1` 和 `gpt-3.5-turbo/gpt-4` 模型
+- 或者 `Azure OpenAI Key` 和 `Azure Whisper Key`
+- **可选** `Azure TTS Key` 和 `elevenlabs Key`
 
 ## 环境依赖
 
@@ -73,18 +73,34 @@ OPENAI_API_BASE: https://xxx.com/v1
 ### 使用 Azure OpenAI
 
 **如果使用 Azure OpenAI，在 `docker-compose.yml` 中一定要填入 `AZURE_OPENAI_KEY`**
-在 `docker-compose.yml`中，找到 `#docker-compose.yml`，去掉 `#`
+在 `docker-compose.yml`中，找到 `#LLM_TYPE: azure-openai`，去掉 `#`
 
 ```
-OPENAI_OPENAI_TYPE: azure
+#LLM_TYPE: azure-openai
 AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+#### 使用 elevenlabs
+
+**如果使用 elevenlabs， `ELEVENLABS_TTS_KEY` 一定要在 `docker-compose.yml` 中填写**
+
+在 `docker-compose.yml`中，找到 `##TTS_TYPE: elevenlabs`，去掉 `#`
+
+```
+#TTS_TYPE: elevenlabs
+ELEVENLABS_TTS_KEY: aaaaaaaaaaaaaaaaaaaaaaaaa
+ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
+```
+
+将`roles.json`中的`voice_name`更改为elevenlabs的语音ID。
 
 ### 使用自定义 Prompt 和 Voice
 
 **如果使用 Azure OpenAI，模型字段必须是您在部署模型时设置的部署名称**
 
-[Azure 支持语言列表](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+[Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+[Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
+[language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 ```json
 {"1": {

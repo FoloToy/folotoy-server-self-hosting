@@ -8,9 +8,9 @@
 
 ## Preparation
 
-- `OpenAI key` or `Azure OpenAI Key`
-
-- `Azure TTS Key`
+- **Required** `OpenAI key` with `whisper-1` and `gpt-3.5-turbo/gpt-4`
+- or `Azure OpenAI Key` and `Azure Whisper Key`
+- **Optional** `Azure TTS Key` or `elevenlabs Key`
 
 ## Environment Dependency
 
@@ -37,10 +37,15 @@
 
   ```
   OPENAI_OPENAI_KEY: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  ```
+
+  OR
+
+  ```
   AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ```
 
-- Change `AZURE_TTS_KEY` into your `Azure TTS Key` in `docker-compose.yml`
+- If you want to use `azure-tts` Change `AZURE_TTS_KEY` into your `Azure TTS Key` in `docker-compose.yml`
 
   ```
   AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -68,7 +73,7 @@
 
 Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` into your custom OpenAI API path
 ```
-#OPENAI_API_BASE: https://xxx.com/v1
+#OPENAI_OPENAI_API_BASE: https://xxx.com/v1
 ```
 
 ### Using Azure OpenAI
@@ -78,15 +83,31 @@ Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` i
 Remove `#` of the line in `docker-compose.yml`
 
 ```
-#OPENAI_OPENAI_TYPE: azure
+#LLM_TYPE: azure-openai
 AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+#### Using elevenlabs
+
+**If you use elevenlabs, `ELEVENLABS_TTS_KEY` must be provided in `docker-compose.yml`**
+
+Remove `#` of the line in `docker-compose.yml`
+
+```
+#TTS_TYPE: elevenlabs
+ELEVENLABS_TTS_KEY: aaaaaaaaaaaaaaaaaaaaaaaaa
+ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
+```
+
+And change `voice_name` in `roles.json` to elevenlabs voice id.
 
 ### Using Custom Prompt and Voice
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
-[Azure Language List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+[Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+[Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
+[language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 ```json
 {"1": {
@@ -99,7 +120,8 @@ AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-XiaoshuangNeural"
+    "voice_name": "zh-CN-XiaoshuangNeural",
+    "language": 'zh'
   }}
 ```
 
