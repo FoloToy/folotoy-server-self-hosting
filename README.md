@@ -105,9 +105,9 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
-[Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
-[Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
-[language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- [Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+- [Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
+- [language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 ```json
 {"1": {

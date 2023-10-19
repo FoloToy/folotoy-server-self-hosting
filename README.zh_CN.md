@@ -98,9 +98,9 @@ ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
 
 **如果使用 Azure OpenAI，模型字段必须是您在部署模型时设置的部署名称**
 
-[Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
-[Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
-[language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- [Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
+- [Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
+- [language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 ```json
 {"1": {
