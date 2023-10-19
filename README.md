@@ -121,7 +121,7 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
     "frequency_penalty": 0,
     "presence_penalty": 0,
     "voice_name": "zh-CN-XiaoshuangNeural",
-    "language": 'zh'
+    "language": "zh"
   }}
 ```
 

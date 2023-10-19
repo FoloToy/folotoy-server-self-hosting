@@ -113,7 +113,8 @@ ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-XiaoshuangNeural"
+    "voice_name": "zh-CN-XiaoshuangNeural",
+    "language": "zh"
   }}
 ```
 
