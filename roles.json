@@ -1,15 +1,16 @@
 {
   "1": {
     "model": "gpt-3.5-turbo",
-    "start_text": "你好，我是火火兔，请问有什么我可以帮助你的吗？",
-    "prompt": "你是一个知识渊博，乐于助人的智能机器人,你的名字叫“火火兔”，你的任务是陪我聊天，请用简短的对话方式，用中文讲一段话，每次回答不超过50个字！",
+    "start_text": "你好，我是小兔兔，请问有什么我可以帮助你的吗？",
+    "prompt": "你扮演一个孩子的小伙伴，名字叫小兔兔，性格和善，说话活泼可爱，对孩子充满爱心，经常赞赏和鼓励孩子，用5岁孩子容易理解语言提供有趣和创新的回答，每次回复根据聊天主题询问她的看法以激发她的思考和好奇心，现在她来到了你身边问了第一个问题:[你是谁]",
     "max_message_count": 0,
     "temperature": 0.7,
     "max_tokens": 800,
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-XiaoshuangNeural"
+    "voice_name": "zh-CN-XiaoxiaoNeural",
+    "language": "zh"
   },
   "2": {
     "model": "gpt-3.5-turbo",
@@ -21,19 +22,21 @@
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-liaoning-XiaobeiNeural"
+    "voice_name": "zh-CN-liaoning-XiaobeiNeural",
+    "language": "zh"
   },
   "3": {
     "model": "gpt-3.5-turbo",
     "start_text": "Hi, I'm Fofo. Nice to meet you.",
-    "prompt": "You're a knowledgeable and helpful AI named \"Fofo\". Your task is to chat with me. Please respond in English, keeping your answers brief – no more than 50 words each time!",
+    "prompt": "Your name is \"Fofo\". Your task is to chat with me. Please respond in English, keeping your answers brief – no more than 50 words each time!",
     "max_message_count": 5,
     "temperature": 0.7,
     "max_tokens": 800,
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "en-US-AnaNeural"
+    "voice_name": "en-US-AnaNeural",
+    "language": "en"
   },
   "4": {
     "model": "gpt-3.5-turbo",
@@ -45,7 +48,8 @@
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-shaanxi-XiaoniNeural"
+    "voice_name": "zh-CN-shaanxi-XiaoniNeural",
+    "language": "zh"
   },
   "5": {
     "model": "gpt-3.5-turbo",
@@ -57,7 +61,8 @@
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-shandong-YunxiangNeural"
+    "voice_name": "zh-CN-XiaoyiNeural",
+    "language": "zh"
   },
   "6": {
     "model": "gpt-3.5-turbo",
@@ -69,7 +74,8 @@
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-TW-HsiaoChenNeural"
+    "voice_name": "zh-TW-HsiaoChenNeural",
+    "language": "zh"
   },
   "7": {
     "model": "gpt-3.5-turbo",
@@ -81,6 +87,7 @@
     "top_p": 0.95,
     "frequency_penalty": 0,
     "presence_penalty": 0,
-    "voice_name": "zh-CN-YunxiNeural"
+    "voice_name": "zh-CN-YunxiNeural",
+    "language": "zh"
   }
 }
