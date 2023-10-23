@@ -149,6 +149,7 @@ if `stt_type` is `azure-sst`, `language` should use BCP-47 codes
     "language": "zh-CN",
     "stt_type": "azure-stt"
   }}
+  ```
 
   Full fields for reference
 
@@ -171,7 +172,7 @@ if `stt_type` is `azure-sst`, `language` should use BCP-47 codes
   }}
   ```
 
-    ```json
+  ```json
   {"1": {
     "model": "gpt-3.5-turbo",
     "start_text": "你好，我是火火兔，请问有什么我可以帮助你的吗？",
