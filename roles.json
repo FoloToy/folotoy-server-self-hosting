@@ -75,7 +75,8 @@
     "frequency_penalty": 0,
     "presence_penalty": 0,
     "voice_name": "zh-TW-HsiaoChenNeural",
-    "language": "zh"
+    "language": "zh-CN",
+    "stt_type": "azure-stt"
   },
   "7": {
     "model": "gpt-3.5-turbo",
