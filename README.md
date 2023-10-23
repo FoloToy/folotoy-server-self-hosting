@@ -132,7 +132,7 @@ if `stt_type` is `openai-whisper`, `language` should use 639-1 codes
   }}
 ```
 
-if `stt_type` is `azure-sst`, `language` should use BCP-47 codes
+if `stt_type` is `azure-stt`, `language` should use BCP-47 codes
 
 ```json
 {"1": {
