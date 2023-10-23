@@ -189,13 +189,13 @@ if `stt_type` is `azure-stt`, `language` should use BCP-47 codes
     "llm_type": "azure-openai",
     "tts_type": "elevenlabs"
   }}
-  ```
-
 ```
+
 ### MQTT Authentication
 
 **The default configuration of EMQX allows any anonymous client to access. You can make your EMQX service only allow connections from your own devices by following these steps.**
 
+- [YouTube Video](https://www.youtube.com/watch?v=3yW5260OTwY)
 - Open `http://your_external_server_ip:18083` in your browser(Default username： `admin`, Default password `public`. Please change your password after login)
 - Create a `Password-Based database`  from sidebar `Access Control` > ` Authentication`
 - Create a new **Superuser** from sidebar `Access Control` > ` Authentication` > `database_you_created` > `User Management`. (`Username` and `Password` should be the ones defined in `docker-compose.yml`  (`MQTT_USERNAME` and `MQTT_PASSWORD`))
