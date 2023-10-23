@@ -31,26 +31,32 @@ services:
 
       ROLES_FILE_PATH: /roles.json
 
+      # Default STT(Sound To Text) type
+      # Options: [openai-whisper, azure-whisper, azure-stt]
       STT_TYPE: openai-whisper
+
+      # OpenAI Whisper
       #OPENAI_WHISPER_API_BASE: https://one-api.xxxx.com/v1
+      OPENAI_WHISPER_KEY: sk-Gnkw1ZnG5rUWbzVl316dddddddddddddddddd
       OPENAI_WHISPER_MODEL: whisper-1
-      OPENAI_WHISPER_KEY: sk-Gnkw1ZnG5rUWbzVl316daaaaaaaaaaaaaaaaaaaa
       
-      #STT_TYPE: azure-whisper
-      AZURE_WHISPER_API_BASE: https://xxxx-whisper.openai.azure.com
-      AZURE_WHISPER_KEY: 9afbef65bcf648768aaaaaaaaaaaaaaaaaaa
+      # Azure Whisper
+      AZURE_WHISPER_API_BASE: https://xxxxx.openai.azure.com
+      AZURE_WHISPER_KEY: 9afbef65bcf6487eeeeeeeeeeeeeeeeeee
       AZURE_WHISPER_DEPLOYMENT_NAME: whisper
       AZURE_WHISPER_API_VERSION: 2023-09-01-preview
 
+      # Default LLM(Large Language Model) type
+      # Options: [openai, azure-openai]
       LLM_TYPE: openai
-      # Please do not use OPENAI_API_BASE here
-      #OPENAI_OPENAI_API_BASE: https://one-api.xxxx.com/v1
-      OPENAI_OPENAI_KEY: sk-5N8F5VXsa7oOZI8Q874601adafsddddddddddddddddd
+
+      # OpenAI
+      #OPENAI_OPENAI_API_BASE: https://one-api.xxx.com/v1
+      OPENAI_OPENAI_KEY: sk-5N8F5VXsa7oOZI8Q874601110AAAAAAAAAAAAAAAAAAAAAA
 
       #Azure OpenAI
-      #LLM_TYPE: azure-openai    
-      AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      AZURE_OPENAI_ENDPOINT: https://folotoy2.openai.azure.com/
+      AZURE_OPENAI_KEY: ef0f2781b5a24b15baaaaaaaaaaaaaaaaaaaaaaa
+      AZURE_OPENAI_ENDPOINT: https://xxxxx.openai.azure.com/
       AZURE_OPENAI_VERSION: "2023-05-15"
 
       #Baidu YIYAN API
@@ -61,18 +67,20 @@ services:
       # If your elevenlabs is a free account, keep 2 here
       VOICE_EXECUTOR_MAX_WORKERS: 2
 
-      # Free but slow
+      # Default TTS(Text to Sound) type
+      # Options: [edge-tts, azure-tts, elevenlabs]
+      # edge-tts is Free but slow
       TTS_TYPE: edge-tts
 
-      #TTS_TYPE: azure-tts
-      AZURE_TTS_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      AZURE_TTS_SERVICE_REGION: eastus
+      # Azure TTS
+      AZURE_TTS_KEY: 3eba91b6143f4d399edeeeeeeeeeeeeeeeeeeeee
+      AZURE_TTS_SERVICE_REGION: eastasia
 
-      #TTS_TYPE: elevenlabs
-      ELEVENLABS_TTS_KEY: aaaaaaaaaaaaaaaaaaaaaaaaa
+      # elevenlabs
+      ELEVENLABS_TTS_KEY: a920b73991e68d5c9c9aaaaaaaaaaaaaaaa
       ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
 
-      AUDIO_DOWNLOAD_URL: http://192.168.41.154:8082
+      AUDIO_DOWNLOAD_URL: http://192.168.52.164:8082
       AUDIO_SAVE_PATH: /audio
 
       # MQTT Broker
@@ -82,5 +90,5 @@ services:
       MQTT_USERNAME: folotoy
       MQTT_PASSWORD: folotoy
 
-      SPEECH_UDP_SERVER_HOST: 192.168.41.154
+      SPEECH_UDP_SERVER_HOST: 192.168.52.164
       SPEECH_UDP_SERVER_PORT: 8085
