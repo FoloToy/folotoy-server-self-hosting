@@ -83,7 +83,6 @@ Remove `#` of the line in `docker-compose.yml` and change `https://xxx.com/v1` i
 Remove `#` of the line in `docker-compose.yml`
 
 ```
-#LLM_TYPE: azure-openai
 AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
@@ -94,7 +93,6 @@ AZURE_OPENAI_KEY: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Remove `#` of the line in `docker-compose.yml`
 
 ```
-#TTS_TYPE: elevenlabs
 ELEVENLABS_TTS_KEY: aaaaaaaaaaaaaaaaaaaaaaaaa
 ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
 ```
@@ -105,9 +103,17 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
+#### Voice List
 - [Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
 - [Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
-- [language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+
+#### Language Codes
+- [Azure TTS language BCP-47 codes][https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt]
+- [Whisper language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+
+#### Role Level Config Examples
+
+if `stt_type` is `openai-whisper`, `language` should use 639-1 codes
 
 ```json
 {"1": {
@@ -121,10 +127,70 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
     "frequency_penalty": 0,
     "presence_penalty": 0,
     "voice_name": "zh-CN-XiaoshuangNeural",
-    "language": "zh"
+    "language": "zh",
+    "stt_type": "openai-whisper"
   }}
 ```
 
+if `stt_type` is `azure-sst`, `language` should use BCP-47 codes
+
+```json
+{"1": {
+    "model": "gpt-3.5-turbo",
+    "start_text": "你好，我是火火兔，请问有什么我可以帮助你的吗？",
+    "prompt": "你是一个知识渊博，乐于助人的智能机器人,你的名字叫“火火兔”，你的任务是陪我聊天，请用简短的对话方式，用中文讲一段话，每次回答不超过50个字！",
+    "max_message_count": 20,
+    "temperature": 0.7,
+    "max_tokens": 800,
+    "top_p": 0.95,
+    "frequency_penalty": 0,
+    "presence_penalty": 0,
+    "voice_name": "zh-CN-XiaoshuangNeural",
+    "language": "zh-CN",
+    "stt_type": "azure-stt"
+  }}
+
+  Full fields for reference
+
+  ```json
+  {"1": {
+    "model": "gpt-3.5-turbo",
+    "start_text": "你好，我是火火兔，请问有什么我可以帮助你的吗？",
+    "prompt": "你是一个知识渊博，乐于助人的智能机器人,你的名字叫“火火兔”，你的任务是陪我聊天，请用简短的对话方式，用中文讲一段话，每次回答不超过50个字！",
+    "max_message_count": 10,
+    "temperature": 0.7,
+    "max_tokens": 800,
+    "top_p": 0.95,
+    "frequency_penalty": 0,
+    "presence_penalty": 0,
+    "voice_name": "zh-CN-XiaoshuangNeural",
+    "language": "zh-CN",
+    "stt_type": "azure-stt",
+    "llm_type": "openai",
+    "tts_type": "azure-tts"
+  }}
+  ```
+
+    ```json
+  {"1": {
+    "model": "gpt-3.5-turbo",
+    "start_text": "你好，我是火火兔，请问有什么我可以帮助你的吗？",
+    "prompt": "你是一个知识渊博，乐于助人的智能机器人,你的名字叫“火火兔”，你的任务是陪我聊天，请用简短的对话方式，用中文讲一段话，每次回答不超过50个字！",
+    "max_message_count": 10,
+    "temperature": 0.7,
+    "max_tokens": 800,
+    "top_p": 0.95,
+    "frequency_penalty": 0,
+    "presence_penalty": 0,
+    "voice_name": "6xTjFMIxZYYFJag51KZe",
+    "language": "zh-CN",
+    "stt_type": "azure-stt",
+    "llm_type": "azure-openai",
+    "tts_type": "elevenlabs"
+  }}
+  ```
+
+```
 ### MQTT Authentication
 
 **The default configuration of EMQX allows any anonymous client to access. You can make your EMQX service only allow connections from your own devices by following these steps.**
