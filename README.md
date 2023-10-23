@@ -108,7 +108,7 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
 - [Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
 
 #### Language Codes
-- [Azure TTS language BCP-47 codes][https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt]
+- [Azure TTS language BCP-47 codes](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt)
 - [Whisper language 639-1 codes in roles.json](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 
 #### Role Level Config Examples
