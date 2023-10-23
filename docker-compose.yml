@@ -46,6 +46,10 @@ services:
       AZURE_WHISPER_DEPLOYMENT_NAME: whisper
       AZURE_WHISPER_API_VERSION: 2023-09-01-preview
 
+      # Azure STT
+      AZURE_STT_KEY: 3eba91b6143f4d3eeeeeeeeeeeeeeeeeeeeeeeee
+      AZURE_STT_SERVICE_REGION: eastasia
+
       # Default LLM(Large Language Model) type
       # Options: [openai, azure-openai]
       LLM_TYPE: openai
