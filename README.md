@@ -105,7 +105,7 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
 
 #### Voice List
 - [Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
-- [Edge-tts Voice List](https://github.com/rany2/edge-tts#changing-the-voice)
+- [Edge-tts Voice List](https://github.com/FoloToy/folotoy-server-self-hosting/wiki/Edge%E2%80%90TTS%E2%80%90Voices)
 
 #### Language Codes
 - [Azure STT language BCP-47 codes](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt)
