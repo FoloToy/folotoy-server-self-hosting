@@ -1,0 +1,99 @@
+version: '3'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    restart: always
+    ports:
+      - "1883:1883/tcp"
+    volumes:
+      - ./mosquitto:/mosquitto/config
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - "8082:80/tcp"
+    volumes:
+      - ./audio:/usr/share/nginx/html
+  folotoy:
+    image: lewangdev/folotoy-server:latest
+    restart: always
+    depends_on:
+      mosquitto:
+          condition: service_started
+      nginx:
+          condition: service_started
+    ports:
+      - "8085:8085/udp"
+    volumes:
+      - ./audio:/audio
+      - ./roles.json:/roles.json
+    environment:
+      LOG_LEVEL: DEBUG
+
+      ROLES_FILE_PATH: /roles.json
+
+      # Default STT(Sound To Text) type
+      # Options: [openai-whisper, azure-whisper, azure-stt]
+      STT_TYPE: openai-whisper
+
+      # OpenAI Whisper
+      #OPENAI_WHISPER_API_BASE: https://one-api.xxxx.com/v1
+      OPENAI_WHISPER_KEY: sk-Gnkw1ZnG5rUWbzVl316dddddddddddddddddd
+      OPENAI_WHISPER_MODEL: whisper-1
+      
+      # Azure Whisper
+      AZURE_WHISPER_API_BASE: https://xxxxx.openai.azure.com
+      AZURE_WHISPER_KEY: 9afbef65bcf6487eeeeeeeeeeeeeeeeeee
+      AZURE_WHISPER_DEPLOYMENT_NAME: whisper
+      AZURE_WHISPER_API_VERSION: 2023-09-01-preview
+
+      # Azure STT
+      AZURE_STT_KEY: 3eba91b6143f4d3eeeeeeeeeeeeeeeeeeeeeeeee
+      AZURE_STT_SERVICE_REGION: eastasia
+
+      # Default LLM(Large Language Model) type
+      # Options: [openai, azure-openai]
+      LLM_TYPE: openai
+
+      # OpenAI
+      #OPENAI_OPENAI_API_BASE: https://one-api.xxx.com/v1
+      OPENAI_OPENAI_KEY: sk-5N8F5VXsa7oOZI8Q874601110AAAAAAAAAAAAAAAAAAAAAA
+
+      #Azure OpenAI
+      AZURE_OPENAI_KEY: ef0f2781b5a24b15baaaaaaaaaaaaaaaaaaaaaaa
+      AZURE_OPENAI_ENDPOINT: https://xxxxx.openai.azure.com/
+      AZURE_OPENAI_VERSION: "2023-05-15"
+
+      #Baidu YIYAN API
+      #LLM_TYPE: yiyan
+      YIYAN_CLIENT_ID: xxxxxxxxxxxxxxxxxx
+      YIYAN_SECRET: xxxxxxxxxxxxxxxxxxxxx
+
+      # If your elevenlabs is a free account, keep 2 here
+      VOICE_EXECUTOR_MAX_WORKERS: 2
+
+      # Default TTS(Text to Sound) type
+      # Options: [edge-tts, azure-tts, elevenlabs]
+      # edge-tts is Free but slow
+      TTS_TYPE: edge-tts
+
+      # Azure TTS
+      AZURE_TTS_KEY: 3eba91b6143f4d399edeeeeeeeeeeeeeeeeeeeee
+      AZURE_TTS_SERVICE_REGION: eastasia
+
+      # elevenlabs
+      ELEVENLABS_TTS_KEY: a920b73991e68d5c9c9aaaaaaaaaaaaaaaa
+      ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
+
+      AUDIO_DOWNLOAD_URL: http://192.168.52.164:8082
+      AUDIO_SAVE_PATH: /audio
+
+      # MQTT Broker
+      MQTT_BROKER_HOST: mosquitto
+      MQTT_BROKER_PORT: 1883
+      MQTT_CLIENT_ID: folotoy_server
+      MQTT_USERNAME: folotoy
+      MQTT_PASSWORD: folotoy
+
+      SPEECH_UDP_SERVER_HOST: 192.168.52.164
+      SPEECH_UDP_SERVER_PORT: 8085
