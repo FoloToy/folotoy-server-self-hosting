@@ -1,11 +1,12 @@
 version: '3'
 services:
-  emqx:
-    image: emqx/emqx:latest
+  mosquitto:
+    image: eclipse-mosquitto
     restart: always
     ports:
       - "1883:1883/tcp"
-      - "18083:18083/tcp"
+    volumes:
+      - ./mosquitto:/mosquitto/config
   nginx:
     image: nginx:latest
     restart: always
@@ -17,7 +18,7 @@ services:
     image: lewangdev/folotoy-server:latest
     restart: always
     depends_on:
-      emqx:
+      mosquitto:
           condition: service_started
       nginx:
           condition: service_started
@@ -88,7 +89,7 @@ services:
       AUDIO_SAVE_PATH: /audio
 
       # MQTT Broker
-      MQTT_BROKER_HOST: emqx
+      MQTT_BROKER_HOST: mosquitto
       MQTT_BROKER_PORT: 1883
       MQTT_CLIENT_ID: folotoy
       MQTT_USERNAME: folotoy
