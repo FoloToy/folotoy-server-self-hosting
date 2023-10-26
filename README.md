@@ -103,6 +103,13 @@ And change `voice_name` in `roles.json` to elevenlabs voice id.
 
 **If you use Azure OpenAI, model field must be deployment name you set when deploy models**
 
+#### Speech to text language config
+
+In roles.json, you can add `language` configuration for stt recognition. Different speech recognition engines have different code formats for the language. Please pay attention to the configuration.
+- If `stt_type` is set to `azure-stt`, the `language` of the role must be configured, otherwise an error will occur. The language codes for `azure-stt` can be found here: [Language](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt), such as `zh-CN`.
+- If `stt_type` is set to `openai-whisper`, the `language` of the role is optional. If a `language` is specified, `openai-whisper` will recognize based on that specific language. If no language is set, openai-whisper will automatically detect the language. The language codes for `openai-whisper` can be found here: [Language](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), such as `zh`.
+- If `stt_type` is using `azure-whisper`, `language` configuration is not supported.
+
 #### Voice List
 - [Azure Voice List](https://learn.microsoft.com/zh-cn/azure/ai-services/speech-service/language-support?tabs=tts)
 - [Edge-tts Voice List](https://github.com/FoloToy/folotoy-server-self-hosting/wiki/Edge%E2%80%90TTS%E2%80%90Voices)
