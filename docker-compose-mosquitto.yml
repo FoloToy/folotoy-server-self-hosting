@@ -73,7 +73,7 @@ services:
       VOICE_EXECUTOR_MAX_WORKERS: 2
 
       # Default TTS(Text to Sound) type
-      # Options: [edge-tts, azure-tts, elevenlabs]
+      # Options: [edge-tts, azure-tts, elevenlabs, openai-tts]
       # edge-tts is Free but slow
       TTS_TYPE: edge-tts
 
@@ -84,6 +84,10 @@ services:
       # elevenlabs
       ELEVENLABS_TTS_KEY: a920b73991e68d5c9c9aaaaaaaaaaaaaaaa
       ELEVENLABS_TTS_MODEL: eleven_multilingual_v2
+
+      # OpenAI TTS
+      OPENAI_TTS_KEY: sk-16XnP3HLHWho21oO2m0AAAAAAAAAAAAAAAAAAAAAA
+      OPENAI_TTS_MODEL: tts-1  
 
       AUDIO_DOWNLOAD_URL: http://192.168.52.164:8082
       AUDIO_SAVE_PATH: /audio
