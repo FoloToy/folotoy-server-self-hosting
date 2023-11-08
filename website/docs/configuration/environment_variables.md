@@ -4,7 +4,7 @@ title: Environment Variables
 sidebar_label: Environment Variables
 ---
 
-TeslaMate accepts the following environment variables for runtime configuration:
+FoloToy Server accepts the following environment variables for runtime configuration:
 
 | Variable Name                     | Description                                                                                                                                                                                                                                                                                                      | Default Value                 |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
