@@ -9,7 +9,6 @@ module.exports = {
           label: "Installation",
           items: [
             "installation/docker",
-            "installation/docker-mosquitto",
             "installation/synology-nas",
             "installation/flyio",
             "installation/windows-wsl2",
@@ -21,7 +20,7 @@ module.exports = {
     {
       type: "category",
       label: "Guides",
-      items: ["guides/nginx", "guides/1panel"],
+      items: ["guides/1panel"],
     },
     {
       type: "category",

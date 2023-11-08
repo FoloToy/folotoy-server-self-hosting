@@ -241,9 +241,26 @@ This setup is recommended if you are running FoloToy Server **on your home netwo
 
 ## Usage
 
-1. Open the web interface [http://your-ip-address:4000](http://localhost:4000)
-2. Sign in with your Tesla account
-3. The Grafana dashboards are available at [http://your-ip-address:3000](http://localhost:3000). Log in with the default user `admin` (initial password `admin`) and enter a secure password.
+1. 选择玩具尾部的开关，将玩具开机，开机后玩具的耳灯蓝色慢闪表明进入配网模式
+
+2. 同时长按上一首/下一首 5s 以上，进入配置模式，此时灯为蓝色渐变
+<img alt="config" src="https://github.com/FoloToy/folotoy-tool/assets/1455685/5998ba97-b78c-414d-b53b-c25ff8c34dd1" />
+
+3. 连接玩具的热点
+
+打开手机或者电脑，选择 FoloToy-xxxx 的 WiFi 后，稍等片刻，手机或者电脑会自动打开配网页面，可配置连接的 WiFi，服务器地址和端口
+
+:::caution
+如果没有弹出页面，也可在浏览器输入 http://192.168.4.1 来配置
+:::
+
+* 进入配置模式：同时长按前面板的前进键和后退键 3s, 此时耳灯为蓝色闪烁
+* 连接 FoloToy：用手机或者电脑搜索 WiFi，WiFi 的名称为 `FoloToy-xxxx`，例如：FoloToy-b8a2
+* 打开配置页面：当连上 WiFi 后，会自动打开配置页面
+* 首页说明：首页有三个按钮，分别是用来配网的 `Configure WiFi`，查看硬件信息的 `Info`，退出配置的 `Exit`，如下图
+
+<img alt="config" src="https://github.com/FoloToy/folotoy-tool/assets/1455685/3cf6d0ac-9504-40ec-94c1-54a09a990fd4" />
+
 
 ## [Update](../upgrading.mdx)
 
