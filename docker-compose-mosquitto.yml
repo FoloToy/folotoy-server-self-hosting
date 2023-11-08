@@ -28,6 +28,8 @@ services:
       - ./audio:/audio
       - ./roles.json:/roles.json
     environment:
+      TZ: Asia/Shanghai
+
       LOG_LEVEL: DEBUG
 
       ROLES_FILE_PATH: /roles.json
