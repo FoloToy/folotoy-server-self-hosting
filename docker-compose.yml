@@ -1,4 +1,7 @@
 version: '3'
+volumes:
+  emqx-data:
+  emqx-log:
 services:
   emqx:
     image: emqx/emqx:latest
@@ -6,6 +9,10 @@ services:
     ports:
       - "1883:1883/tcp"
       - "18083:18083/tcp"
+      - "8083:8083/tcp"
+    volumes:
+      - emqx-data:/opt/emqx/data
+      - emqx-log:/opt/emqx/log
   nginx:
     image: nginx:latest
     restart: always
@@ -27,6 +34,8 @@ services:
       - ./audio:/audio
       - ./roles.json:/roles.json
     environment:
+      TZ: Asia/Shanghai
+
       LOG_LEVEL: DEBUG
 
       ROLES_FILE_PATH: /roles.json
