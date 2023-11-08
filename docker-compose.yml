@@ -1,7 +1,5 @@
 version: '3'
-volumes:
-  emqx-data:
-  emqx-log:
+
 services:
   emqx:
     image: emqx/emqx:latest
@@ -109,3 +107,7 @@ services:
 
       SPEECH_UDP_SERVER_HOST: 192.168.52.164
       SPEECH_UDP_SERVER_PORT: 8085
+
+volumes:
+  emqx-data:
+  emqx-log:

@@ -1,6 +1,6 @@
 ---
 title: Docker install
-sidebar_label: Docker(EMQX)
+sidebar_label: Docker(Mosquitto)
 ---
 
 This document provides the necessary steps for installation of FoloToy Server on a any system that runs Docker. For a walkthrough that provides the necessary steps for manual installation see [Manual Install](debian.md).
@@ -13,7 +13,7 @@ This setup is recommended if you are running FoloToy Server **on your home netwo
 - A Machine that's always on, so FoloToy Server can continually serve your toys
 - At least 512 MB of RAM on the machine for the installation to succeed.
 - Recommended using Linux x86_64/ARM64, Debian 10-11/Ubuntu 20.04-22.04/Armbian
-- External internet access, to talk to openai.com or azure.com etc.
+- External internet access, to talk to openai.com or auzre.com
 
 ## Instructions
 

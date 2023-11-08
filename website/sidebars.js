@@ -9,8 +9,10 @@ module.exports = {
           label: "Installation",
           items: [
             "installation/docker",
-            "installation/debian",
-            "installation/freebsd",
+            "installation/docker-mosquitto",
+            "installation/synology-nas",
+            "installation/flyio",
+            "installation/windows-wsl2",
           ],
         },
         "faq",
@@ -30,9 +32,7 @@ module.exports = {
       type: "category",
       label: "Integrations",
       items: [
-        "integrations/home_assistant",
         "integrations/mqtt",
-        "integrations/Node-RED",
       ],
     },
     {
