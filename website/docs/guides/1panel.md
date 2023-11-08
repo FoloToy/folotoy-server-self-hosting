@@ -1,5 +1,5 @@
 ---
-title: Web based management of your docker installation
+title: Web based management of your docker installation with 1Panel
 ---
 
 To manage your docker installation of TeslaMate you could use the open-source management UI [portainer](https://portainer.io).

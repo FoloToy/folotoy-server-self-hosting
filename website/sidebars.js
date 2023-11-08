@@ -21,12 +21,7 @@ module.exports = {
     {
       type: "category",
       label: "Guides",
-      items: ["guides/traefik", "guides/apache", "guides/portainer"],
-    },
-    {
-      type: "category",
-      label: "Import",
-      items: ["import/teslafi", "import/tesla_apiscraper"],
+      items: ["guides/nginx", "guides/1panel"],
     },
     {
       type: "category",
@@ -45,14 +40,7 @@ module.exports = {
       label: "Maintenance",
       items: [
         "upgrading",
-        "maintenance/backup_restore",
-        "maintenance/manually_fixing_data",
-        "maintenance/upgrading_postgres",
       ],
-    },
-    {
-      type: "doc",
-      id: "projects",
     },
     {
       type: "doc",

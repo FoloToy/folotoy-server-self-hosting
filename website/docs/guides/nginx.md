@@ -1,5 +1,5 @@
 ---
-title: Advanced installation with Traefik, Let's Encrypt & HTTP Basic Auth
+title: Advanced installation with Nginx, Let's Encrypt & HTTP Basic Auth
 ---
 
 In case you wish to make TeslaMate publicly available on the Internet, it is strongly recommended to secure the web interface and allow access to Grafana only with a password. This guide provides a _[docker-compose.yml](#docker-composeyml)_ which differs from the basic installation in the following aspects:
