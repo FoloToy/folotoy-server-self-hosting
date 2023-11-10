@@ -70,7 +70,7 @@ services:
       #Azure OpenAI
       AZURE_OPENAI_KEY: ef0f2781b5a24b15baaaaaaaaaaaaaaaaaaaaaaa
       AZURE_OPENAI_ENDPOINT: https://xxxxx.openai.azure.com/
-      AZURE_OPENAI_VERSION: "2023-05-15"
+      AZURE_OPENAI_API_VERSION: "2023-05-15"
 
       #Baidu YIYAN API
       #LLM_TYPE: yiyan
