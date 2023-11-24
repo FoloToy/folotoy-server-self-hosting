@@ -1,5 +1,6 @@
 version: '3'
 volumes:
+  emqx-etc:
   emqx-data:
   emqx-log:
 services:
@@ -11,8 +12,11 @@ services:
       - "18083:18083/tcp"
       - "8083:8083/tcp"
     volumes:
+      - emqx-etc:/opt/emqx/etc    
       - emqx-data:/opt/emqx/data
       - emqx-log:/opt/emqx/log
+    environment:
+      - "EMQX_NODE_NAME=emqx@node1.emqx.io"
   nginx:
     image: nginx:latest
     restart: always
