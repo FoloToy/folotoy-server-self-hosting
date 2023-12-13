@@ -1,0 +1,16 @@
+# fly.toml app configuration file generated for folotoy-mqtt on 2023-12-12T17:47:24+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "folotoy-mqtt"
+primary_region = "nrt"
+
+[build]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 1883
+
+  [[services.ports]]
+    port = 1883
