@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for folotoy-server on 2023-12-13T18:33:02+08:00
+# fly.toml app configuration file generated for <your_app_name> on 2023-12-13T18:33:02+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "folotoy-server"
-primary_region = "nrt"
+app = "<your_app_name>"
+#primary_region = "nrt"
 
 [build]
 
@@ -12,7 +12,7 @@ primary_region = "nrt"
   API_SERVER = "true"
   API_SERVER_BIND_ADDRESS = "0.0.0.0"
   API_SERVER_PORT = "8082"
-  AUDIO_DOWNLOAD_URL = "http://folotoy-server.fly.dev:8082"
+  AUDIO_DOWNLOAD_URL = "http://<your_app_name>.fly.dev:8082"
   AUDIO_SAVE_PATH = "/audio"
   LLM_TYPE = "openai"
   LOG_LEVEL = "DEBUG"
@@ -24,7 +24,7 @@ primary_region = "nrt"
   OPENAI_WHISPER_MODEL = "whisper-1"
   ROLES_FILE_PATH = "/config/roles.json"
   SPEECH_UDP_SERVER_BIND_ADDRESS = "fly-global-services"
-  SPEECH_UDP_SERVER_HOST = "folotoy-server.fly.dev"
+  SPEECH_UDP_SERVER_HOST = "<your_app_name>.fly.dev"
   SPEECH_UDP_SERVER_PORT = "8085"
   STT_TYPE = "openai-whisper"
   TTS_TYPE = "edge-tts"
