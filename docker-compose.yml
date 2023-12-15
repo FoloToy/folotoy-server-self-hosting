@@ -27,11 +27,6 @@ services:
   folotoy:
     image: lewangdev/folotoy-server:latest
     restart: always
-    depends_on:
-      emqx:
-          condition: service_started
-      nginx:
-          condition: service_started
     ports:
       - "8085:8085/udp"
     volumes:
