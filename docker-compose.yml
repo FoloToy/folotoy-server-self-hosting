@@ -16,7 +16,7 @@ services:
       - emqx-data:/opt/emqx/data
       - emqx-log:/opt/emqx/log
     environment:
-      - "EMQX_NODE_NAME=emqx@node1.emqx.io"
+      EMQX_NODE_NAME: emqx@node1.emqx.io
   nginx:
     image: nginx:latest
     restart: always
