@@ -14,6 +14,7 @@ RUN mkdir /config && mkdir /audio
 ADD roles.json /config 
 
 ADD start.sh /src
+RUN chmod +x /src/start.sh
 
 EXPOSE 8085
 EXPOSE 8082
