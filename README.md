@@ -13,3 +13,11 @@ A customized, self-hosted server for your Folotoys.
 ## Documentation
 
 The documentation is available at [docs.folotoy.com](https://docs.folotoy.com/).
+
+
+## Quick Start
+
+Copy-paste the below code and press enter
+```
+git clone https://github.com/FoloToy/folotoy-server-self-hosting.git folotoy-server
+```

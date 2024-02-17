@@ -10,3 +10,10 @@
 
 ## 文档
 文档可在 [docs.folotoy.com](https://docs.folotoy.com/) 上找到。 
+
+## 快速开始
+
+复制粘贴以下代码，然后按回车。
+```
+git clone https://github.com/FoloToy/folotoy-server-self-hosting.git folotoy-server
+```

@@ -126,7 +126,7 @@ services:
       AUDIO_SAVE_PATH: /audio
 
       # MQTT Broker
-      MQTT_BROKER_HOST: mosquitto
+      MQTT_BROKER_HOST: emqx
       MQTT_BROKER_PORT: 1883
       MQTT_CLIENT_ID: folotoy
       MQTT_USERNAME: folotoy
