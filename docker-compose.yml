@@ -68,7 +68,9 @@ services:
       ALIYUN_ASR_APP_KEY: Ltamxxxxxxxxxxxxxxxxxxxxx
 
       # Default LLM(Large Language Model) type
-      # Options: [openai, azure-openai, gemini, dify, qianfan]
+      # Options: ['openai', 'azure-openai', 'gemini', 'dify', 'qianfan', 'xiaodu',
+      #           'ollama', 'groq', 'moonshot', 'anthropic', 'zhipu', 'lingyiwanwu', 
+      #           'dashscope', 'spark-desk', 'minimax']
       LLM_TYPE: openai
 
       # OpenAI
@@ -97,11 +99,41 @@ services:
       QIANFAN_CLIENT_ID: 13rBTgxxxxxxxxxxxxxxxxxx
       QIANFAN_SECRET: zYxtMIQLexxxxxxxxxxxxxxxxxx
 
+      # Moonshot
+      MOONSHOT_API_BASE: https://api.moonshot.cn/v1
+      MOONSHOT_KEY: sk-XCLMlj54GDTxxxx
+      MOONSHOT_MODEL: moonshot-v1-8k
+
+      # Aliyun Dashscope
+      DASHSCOPE_KEY: sk-f4x
+      DASHSCOPE_MODEL: qwen-turbo
+      DASHSCOPE_ENABLE_SEARCH: true
+      
+      # Lingyiwanwu
+      LINGYIWANWU_KEY: 4b2f584b4x
+      LINGYIWANWU_MODEL: yi-34b-chat-200k
+      
+      # Zhipu
+      ZHIPU_KEY: 4544625bb0d0ax
+      #ZHIPU_MODEL=glm-3-turbo
+      
+      # Spark Desk
+      SPARK_DESK_API_VERSION: v2.0
+      SPARK_DESK_APP_ID: d2c1x
+      SPARK_DESK_API_KEY: 10610b3x
+      SPARK_DESK_API_SECRET: N2I5xxxxxxxxx
+      SPARK_DESK_TEMPERATURE: 0.7
+      SPARK_DESK_MAX_TOKENS: 4096
+      
+      # MINIMAX
+      MINIMAX_KEY: eyJhbGciOiJSUzI1NiIsInRx
+      
+
       # If your elevenlabs is a free account, keep 2 here
       VOICE_EXECUTOR_MAX_WORKERS: 2
 
       # Default TTS(Text to Sound) type
-      # Options: [openai-tts, azure-tts, elevenlabs, edge-tts, aliyun-tts]
+      # Options: [openai-tts, azure-openai-tts, azure-tts, dify-tts, elevenlabs, edge-tts, aliyun-tts]
       # edge-tts is Free but slow
       TTS_TYPE: edge-tts
 
@@ -122,6 +154,17 @@ services:
       ALIYUN_TTS_ACCESS_KEY_SECRET: 3zWkHVxxxxxxxxxxxxxxxxxxxxx
       ALIYUN_TTS_APP_KEY: Ltamxxxxxxxxxxxxx
 
+      # Azure Openai TTS
+      AZURE_OPENAI_TTS_API_BASE: https://xxx-whisper.openai.azure.com/
+      AZURE_OPENAI_TTS_API_VERSION: 2024-02-15-preview
+      AZURE_OPENAI_TTS_DEPLOYMENT_NAME: tts
+      AZURE_OPENAI_TTS_KEY: 01fdbc75bdxxxxxx
+      AZURE_OPENAI_TTS_MODEL: tts-1
+
+      # Dify TTS
+      DIFY_TTS_API_BASE: https://api.dify.ai/v1
+      DIFY_TTS_KEY: app-5YGbAx
+      
       AUDIO_DOWNLOAD_URL: http://your_vps_ip:8082
       AUDIO_SAVE_PATH: /audio
 
