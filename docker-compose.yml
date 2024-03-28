@@ -70,7 +70,7 @@ services:
       # Default LLM(Large Language Model) type
       # Options: ['openai', 'azure-openai', 'gemini', 'dify', 'qianfan', 'xiaodu',
       #           'ollama', 'groq', 'moonshot', 'anthropic', 'zhipu', 'lingyiwanwu', 
-      #           'dashscope', 'spark-desk', 'minimax']
+      #           'dashscope', 'spark-desk', 'minimax', 'aws-bedrock']
       LLM_TYPE: openai
 
       # OpenAI
