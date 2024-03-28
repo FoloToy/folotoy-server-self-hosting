@@ -133,6 +133,10 @@ services:
       AWS_BEDROCK_ACCESS_KEY_SECRET: ss07ojxxW/X7YHZkxxxxxxxxxx
       AWS_BEDROCK_MODEL: anthropic.claude-v2:1
       
+      # FastGPT
+      FASTGPT_KEY: here-is-app-key-not-account-key
+      #FASTGPT_API_BASE: https://api.fastgpt.in/api
+      #FASTGPT_CHAT_ID: xxx
 
       # If your elevenlabs is a free account, keep 2 here
       VOICE_EXECUTOR_MAX_WORKERS: 2
