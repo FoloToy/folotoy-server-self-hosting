@@ -40,7 +40,7 @@ services:
       ROLES_FILE_PATH: /config/roles.json
 
       # Default STT(Sound To Text) type
-      # Options: [openai-whisper, azure-whisper, azure-stt, dify-stt, aliyun-asr]
+      # Options: [openai-whisper, azure-whisper, azure-stt, dify-stt, aliyun-asr, volcengine-asr]
       STT_TYPE: openai-whisper
 
       # OpenAI Whisper
@@ -67,10 +67,16 @@ services:
       ALIYUN_ASR_ACCESS_KEY_SECRET: 3zWkHVxxxxxxxxxxxxxxxxxxxxx
       ALIYUN_ASR_APP_KEY: Ltamxxxxxxxxxxxxxxxxxxxxx
 
+      #Volcengine ASR
+      VOLCENGINE_ASR_ACCESS_TOKEN: U5joq1ow-Goyxxxxxxxxxxxxxx
+      VOLCENGINE_ASR_APP_ID: 4556821315
+      VOLCENGINE_ASR_CLUSTER_ID: volcengine_input_common
+
+
       # Default LLM(Large Language Model) type
       # Options: ['openai', 'azure-openai', 'gemini', 'dify', 'qianfan', 'xiaodu',
       #           'ollama', 'groq', 'moonshot', 'anthropic', 'zhipu', 'lingyiwanwu', 
-      #           'dashscope', 'spark-desk', 'minimax', 'aws-bedrock']
+      #           'dashscope', 'spark-desk', 'minimax', 'aws-bedrock'， 'coze']
       LLM_TYPE: openai
 
       # OpenAI
@@ -138,11 +144,16 @@ services:
       #FASTGPT_API_BASE: https://api.fastgpt.in/api
       #FASTGPT_CHAT_ID: xxx
 
+      #Coze
+      COZE_API_BASE: https://api.coze.cn/open_api/v2
+      COZE_PERSONAL_ACCESS_TOKEN: pat_Vl3CaNcFgf67wx
+      COZE_BOT_ID: 73568618000000060037
+
       # If your elevenlabs is a free account, keep 2 here
       VOICE_EXECUTOR_MAX_WORKERS: 2
 
       # Default TTS(Text to Sound) type
-      # Options: [openai-tts, azure-openai-tts, azure-tts, dify-tts, elevenlabs, edge-tts, aliyun-tts]
+      # Options: [openai-tts, azure-openai-tts, azure-tts, dify-tts, elevenlabs, edge-tts, aliyun-tts, volcengine-tts]
       # edge-tts is Free but slow
       TTS_TYPE: edge-tts
 
@@ -173,6 +184,15 @@ services:
       # Dify TTS
       DIFY_TTS_API_BASE: https://api.dify.ai/v1
       DIFY_TTS_KEY: app-5YGbAx
+
+      #Volcengine TTS
+      VOLCENGINE_TTS_ACCESS_TOKEN: U5joq1ow-xxxxxxxxxxxx
+      VOLCENGINE_TTS_APP_ID: 45568210000
+      VOLCENGINE_TTS_CLUSTER_ID: volcano_tts
+      VOLCENGINE_TTS_VOICE_TYPE: BV700_V2_streaming
+      VOLCENGINE_TTS_EMOTION: conniving
+      VOLCENGINE_TTS_LANGUAGE: zh_guangxi
+
       
       AUDIO_DOWNLOAD_URL: http://your_vps_ip:8082
       AUDIO_SAVE_PATH: /audio
