@@ -113,7 +113,7 @@ services:
       # Aliyun Dashscope
       DASHSCOPE_KEY: sk-f4x
       DASHSCOPE_MODEL: qwen-turbo
-      DASHSCOPE_ENABLE_SEARCH: true
+      DASHSCOPE_ENABLE_SEARCH: "true"
       
       # Lingyiwanwu
       LINGYIWANWU_KEY: 4b2f584b4x
