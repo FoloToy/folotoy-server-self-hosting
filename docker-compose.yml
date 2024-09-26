@@ -206,3 +206,13 @@ services:
 
       SPEECH_UDP_SERVER_HOST: your_vps_ip
       SPEECH_UDP_SERVER_PORT: 8085
+
+      # Storage
+      STORAGE_TYPE: file
+      #STORAGE_TYPE: volcengine_tos
+      TOS_AK: AKLTYmY3ZmJxxxxxxxxxx
+      TOS_SK: "WmpNellXxxxxxxxxxxxxxxxxxxxxxxQ=="
+      TOS_ENDPOINT: tos-cn-beijing.ivolces.com
+      TOS_REGION: cn-beijing
+      TOS_BUCKET_NAME: xxxx-voice
+      TOS_MAX_CONNECTIONS: 1024
