@@ -1,0 +1,37 @@
+# Use the custom Folotoy server image
+FROM lewangdev/folotoy-server:latest
+WORKDIR /src
+
+# Set environment variables
+ENV TZ=Asia/Shanghai
+ENV LOG_LEVEL=DEBUG
+ENV ROLES_FILE_PATH=/config/roles.json
+ENV STT_TYPE=openai-whisper
+ENV OPENAI_WHISPER_KEY=sk-Gnkw1ZnG5rUWbzVl316dddddddddddddddddd
+ENV OPENAI_WHISPER_MODEL=whisper-1
+ENV LLM_TYPE=openai
+ENV OPENAI_OPENAI_API_BASE=https://one-api.xxx.com/v1
+ENV OPENAI_OPENAI_MODEL=gpt-3.5-turbo
+ENV OPENAI_OPENAI_KEY=sk-5N8F5VXsa7oOZI8Q874601110AAAAAAAAAAAAAAAAAAAAAA
+ENV TTS_TYPE=openai-tts
+ENV OPENAI_TTS_KEY=sk-16XnP3HLHWho21oO2m0AAAAAAAAAAAAAAAAAAAAAA
+ENV OPENAI_TTS_MODEL=tts-1 
+ENV MQTT_BROKER_HOST=emqx
+ENV MQTT_BROKER_PORT=1883
+ENV MQTT_CLIENT_ID=folotoy
+ENV MQTT_USERNAME=folotoy
+ENV MQTT_PASSWORD=folotoy
+ENV SPEECH_UDP_SERVER_HOST=your_vps_ip
+ENV SPEECH_UDP_SERVER_PORT=8085
+ENV STORAGE_TYPE=file
+ENV AUDIO_DOWNLOAD_URL=http://your_vps_ip:8082
+ENV AUDIO_SAVE_PATH=/audio
+
+# Expose UDP port for the Folotoy service
+EXPOSE 8085/udp
+
+# Volume for configuration and audio files
+VOLUME ["/audio", "/config"]
+
+# Set the entrypoint to start the Folotoy server
+CMD ["python3", "app/app.py"]

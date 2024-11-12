@@ -1,0 +1,11 @@
+# Use the official Nginx image
+FROM nginx:latest
+
+# Copy custom audio files to Nginx's HTML directory
+COPY ./audio /usr/share/nginx/html
+
+# Expose the port for the Nginx service
+EXPOSE 80
+
+# Default command to run Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]

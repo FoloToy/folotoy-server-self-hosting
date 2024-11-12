@@ -1,0 +1,14 @@
+# Use the official EMQX image
+FROM emqx/emqx:latest
+
+# Set environment variables for EMQX
+ENV EMQX_NODE_NAME=emqx@node1.emqx.io
+
+# Expose ports
+EXPOSE 1883 18083 8083
+
+# Volume for configuration, data, and logs
+VOLUME ["/opt/emqx/etc", "/opt/emqx/data", "/opt/emqx/log"]
+
+# Set the entrypoint
+CMD ["/opt/emqx/bin/emqx", "foreground"]
