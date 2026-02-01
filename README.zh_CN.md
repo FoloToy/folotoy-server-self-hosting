@@ -11,6 +11,12 @@
 ## 文档
 文档可在 [docs.folotoy.com](https://docs.folotoy.com/) 上找到。 
 
+
+## OpenClaw Skill 部署
+
+为了更便捷的部署体验，您可以使用 `folotoy-server-deploy` OpenClaw Skill。该技能通过 Docker Compose 自动化设置过程，并方便您配置 STT、LLM 和 TTS 的 API 密钥。
+要使用此技能，请确保您已安装 OpenClaw。之后，您可以导入该技能 (`folotoy-server-deploy.skill`) 并遵循其说明来部署 FoloToy 服务器。
+
 ## 快速开始
 
 复制粘贴以下代码，然后按回车。

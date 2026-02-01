@@ -15,6 +15,12 @@ A customized, self-hosted server for your Folotoys.
 The documentation is available at [docs.folotoy.com](https://docs.folotoy.com/).
 
 
+
+## OpenClaw Skill Deployment
+
+For a streamlined deployment experience, you can use the `folotoy-server-deploy` OpenClaw Skill. This skill automates the setup using Docker Compose and allows easy configuration of your STT, LLM, and TTS API keys.
+To use this skill, make sure you have OpenClaw installed. You can then import the skill (`folotoy-server-deploy.skill`) and follow its instructions to deploy the FoloToy Server.
+
 ## Quick Start
 
 Copy-paste the below code and press enter
