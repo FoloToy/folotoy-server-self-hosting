@@ -83,6 +83,12 @@ services:
       #OPENAI_OPENAI_MODEL: gpt-3.5-turbo
       OPENAI_OPENAI_KEY: sk-5N8F5VXsa7oOZI8Q874601110AAAAAAAAAAAAAAAAAAAAAA
 
+      # Groq: set LLM_TYPE to groq and uncomment these settings.
+      # Choose a model available in your Groq account.
+      #GROQ_API_BASE: https://api.groq.com/openai/v1
+      #GROQ_KEY: your_groq_api_key
+      #GROQ_MODEL: your_model_name
+
       #Azure OpenAI
       AZURE_OPENAI_KEY: ef0f2781b5a24b15baaaaaaaaaaaaaaaaaaaaaaa
       AZURE_OPENAI_ENDPOINT: https://xxxxx.openai.azure.com/
