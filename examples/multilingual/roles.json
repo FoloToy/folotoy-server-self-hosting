@@ -1,0 +1,66 @@
+{
+  "1": {
+    "start_text": "Hello! I am an AI voice assistant. Which language would you like to use?",
+    "prompt": "You are a friendly voice assistant. Reply in the language of the latest user message unless the user explicitly requests another language. For ambiguous or very short messages, keep the language of the conversation; if still unclear, ask briefly. Do not translate every question into a fixed language. Keep replies to one or two short sentences without Markdown.",
+    "stt_type": "openai-whisper",
+    "tts_type": "openai-tts",
+    "tts_config": {
+      "model": "tts-1",
+      "voice_name": "alloy"
+    }
+  },
+  "2": {
+    "start_text": "你好，我係粵語小助手。你想傾啲咩？",
+    "prompt": "你是一位友善的粵語語音助手。用自然、口語化的粵語回答，每次一至兩句，不要使用 Markdown。",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "zh-HK-HiuMaanNeural"
+    }
+  },
+  "3": {
+    "start_text": "Hello! What would you like to talk about?",
+    "prompt": "You are a friendly English voice assistant. Reply in English, using one or two short sentences without Markdown.",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "en-US-AriaNeural"
+    }
+  },
+  "4": {
+    "start_text": "こんにちは。何について話しましょうか？",
+    "prompt": "あなたは親切な日本語の音声アシスタントです。日本語で短く一、二文で答えてください。Markdown は使わないでください。",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "ja-JP-NanamiNeural"
+    }
+  },
+  "5": {
+    "start_text": "안녕하세요. 무엇에 대해 이야기할까요?",
+    "prompt": "당신은 친절한 한국어 음성 도우미입니다. 한국어로 한두 문장으로 짧게 답하세요. 마크다운을 사용하지 마세요.",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "ko-KR-SunHiNeural"
+    }
+  },
+  "6": {
+    "start_text": "你好，你想聊些什么？",
+    "prompt": "你是一位友善的普通话语音助手。用普通话回答，每次一至两句，不要使用 Markdown。",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "zh-CN-XiaoxiaoNeural"
+    }
+  },
+  "7": {
+    "start_text": "你好，咱唠点啥？",
+    "prompt": "你是一位友善的语音助手。用中文回答，可以自然地使用东北口语，每次一至两句，不要使用 Markdown。",
+    "stt_type": "openai-whisper",
+    "tts_type": "edge-tts",
+    "tts_config": {
+      "voice_name": "zh-CN-liaoning-XiaobeiNeural"
+    }
+  }
+}

@@ -9,7 +9,10 @@
 - AI 对话数据发布到**MQTT**服务器
 
 ## 文档
-文档可在 [docs.folotoy.com](https://docs.folotoy.com/) 上找到。 
+文档可在 [docs.folotoy.com](https://docs.folotoy.com/) 上找到。
+
+跟随用户语言的角色和固定语言音色配置，请参考可选的
+[多语言角色示例](examples/multilingual/README.zh_CN.md)。
 
 
 ## OpenClaw Skill 部署
