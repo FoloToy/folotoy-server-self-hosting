@@ -14,6 +14,9 @@ A customized, self-hosted server for your Folotoys.
 
 The documentation is available at [docs.folotoy.com](https://docs.folotoy.com/).
 
+For an opt-in language-following role and fixed-language voices, see the
+[multilingual role example](examples/multilingual/README.md).
+
 
 
 ## OpenClaw Skill Deployment
